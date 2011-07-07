@@ -122,8 +122,9 @@ bool RunJsString(const std::string& body)
 
 int main(int argc, char** argv)
 {
-    std::string eval_str = "";
+    std::cout << "V8 engine: " << v8::V8::GetVersion() << std::endl;
 
+    std::string eval_str = "";
     if (argc > 1)
     {
         eval_str = argv[1];
