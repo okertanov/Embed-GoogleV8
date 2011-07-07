@@ -1,3 +1,6 @@
+REM    Copyright (C) 2011 Oleg Kertanov <okertanov@gmail.com>
+REM    All rights reserved.
+
 REM http://code.google.com/p/v8/wiki/BuildingOnWindows
 REM svn checkout http://v8.googlecode.com/svn/branches/bleeding_edge/ v8
 

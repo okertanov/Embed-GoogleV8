@@ -1,3 +1,6 @@
+//    Copyright (C) 2011 Oleg Kertanov <okertanov@gmail.com>
+//    All rights reserved.
+
 #include <new>
 #include <string>
 #include <cassert>

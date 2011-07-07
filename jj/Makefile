@@ -1,3 +1,6 @@
+##    Copyright (C) 2011 Oleg Kertanov <okertanov@gmail.com>
+##    All rights reserved.
+
 V8_INC=/I../v8/include
 V8_LIB=../v8/v8.lib
 
