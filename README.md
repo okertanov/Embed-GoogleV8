@@ -19,4 +19,7 @@ The JavaScript shell:
 ---------------------
     jj.exe "var msg= ''; ['Hello', 'World!'].map(function(v){msg += v + ' '}); Alert(msg)"
 
+    jj.exe "((1e-3 + 1e-2) / .05).toPrecision(20)"
+
+    jj.exe "+ new Date()"
 
