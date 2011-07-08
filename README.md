@@ -10,7 +10,7 @@ Building:
     git submodule init
     git submodule update
     git submodule foreach "git pull"
-    call build.cmd
+    call build-v8.cmd
     cd jj
     call "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin\vcvars32.bat"
     make
