@@ -11,8 +11,12 @@ LINKER=/link /SUBSYSTEM:CONSOLE /LTCG /DEBUG /PDB:jj.pdb
 
 all: jj.exe
 
-jj.exe: jj.cpp
-	$(CC) $(CPPFLAGS) $< $(LDFLAGS) $(LINKER)
+jj.cpp: jj.h
+
+japi.cpp: japi.h
+
+jj.exe: jj.cpp japi.cpp
+	$(CC) $(CPPFLAGS) $^ $(LDFLAGS) $(LINKER)
 
 clean:
 	-@rm -f *.exe *.manifest

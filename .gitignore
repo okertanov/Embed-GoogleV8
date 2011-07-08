@@ -1,5 +1,11 @@
 *.exe
-*.exe.manifest
 *.o
 *.obj
 *.pdb
+*.ncb
+*.suo
+*.exe.manifest
+*.okertanov.user
+jj/Debug
+
+

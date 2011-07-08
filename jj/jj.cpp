@@ -13,28 +13,11 @@
 #include <algorithm>
 #include <functional>
 
-#include <windows.h>
+#include "jj.h"
+#include "japi.h"
 
-#include <v8.h>
 
-
-//Native
-bool RunJsString(const std::string& body);
-bool HandleException(const v8::TryCatch& trycatch);
-const std::string MessageOfException(const v8::TryCatch& trycatch);
-
-//JS API
-v8::Handle<v8::Value> JS_alert(const v8::Arguments& args);
-
-v8::Handle<v8::Value> JS_Alert(const v8::Arguments& args)
-{
-    v8::HandleScope handle_scope;
-    v8::String::Utf8Value message(args.Length() ? args[0] : v8::String::New("undefined"));
-    ::MessageBoxA(0, *message, "JavaScript", 0);
-    return v8::Undefined();
-}
-
-bool HandleException(v8::TryCatch& trycatch)
+bool HandleException(const v8::TryCatch& trycatch)
 {
     bool ret = false;
 
@@ -45,7 +28,7 @@ bool HandleException(v8::TryCatch& trycatch)
     return ret;
 }
 
-std::string MessageOfException(v8::TryCatch& trycatch)
+const std::string MessageOfException(const v8::TryCatch& trycatch)
 {
     std::string message = "";
 
@@ -127,3 +110,4 @@ int main(int argc, char** argv)
 
     return EXIT_SUCCESS;
 }
+
