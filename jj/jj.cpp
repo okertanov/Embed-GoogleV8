@@ -43,14 +43,41 @@ const std::string MessageOfException(const v8::TryCatch& trycatch)
     return message;
 }
 
+v8::Persistent<v8::Context> CreateJsContext()
+{
+    v8::Handle<v8::ObjectTemplate> global = v8::ObjectTemplate::New();
+    japi::RegisterModule(global);
+    v8::Persistent<v8::Context> context = v8::Context::New(NULL, global);
+    return context;
+}
+
+bool RunJsFile(const std::string& path)
+{
+    bool rc = true;
+
+    try
+    {
+    }
+    catch(std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch(...)
+    {
+        std::cerr << "Unknown exception." << std::endl;
+    }
+
+    v8::V8::Dispose();
+
+    return rc;
+}
+
 bool RunJsString(const std::string& body)
 {
     bool rc = true;
 
     v8::HandleScope handle_scope;
-    v8::Handle<v8::ObjectTemplate> global = v8::ObjectTemplate::New();
-    global->Set(v8::String::New("Alert"), v8::FunctionTemplate::New(JS_Alert));
-    v8::Persistent<v8::Context> context = v8::Context::New(NULL, global);
+    v8::Persistent<v8::Context> context = CreateJsContext();
     v8::Context::Scope context_scope(context);
 
     try
