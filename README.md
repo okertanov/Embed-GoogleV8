@@ -24,3 +24,8 @@ The JavaScript shell:
 
     jj.exe "+ new Date()"
 
+TODO:
+-----
+* Exec timeout
+* Debug mode
+
